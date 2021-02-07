@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">TrackingConverteoApp</string>
+    <string name="questionsTitle">What country this flag is belong to ?</string>
+</resources>

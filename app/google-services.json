@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "75676339821",
+    "project_id": "testtracking-4953f",
+    "storage_bucket": "testtracking-4953f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:75676339821:android:e0a431ebb41e7f9b53b964",
+        "android_client_info": {
+          "package_name": "com.example.trackingconverteoapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "75676339821-5mjlm6th9k5o6s69gpj0517rcml6og0j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCaJk9e6clMFd0H0_MpLKO3a384aJxjHIk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "75676339821-5mjlm6th9k5o6s69gpj0517rcml6og0j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
