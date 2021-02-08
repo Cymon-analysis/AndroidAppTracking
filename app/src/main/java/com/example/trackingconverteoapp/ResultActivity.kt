@@ -5,16 +5,26 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.analytics.ktx.analytics
 import com.google.firebase.analytics.ktx.logEvent
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_result.*
 
 class ResultActivity : AppCompatActivity() {
 
+    // [START declare_analytics]
     private lateinit var firebaseAnalytics: FirebaseAnalytics
+    // [END declare_analytics]
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_result)
+
+
+        // FIREBASE
+        firebaseAnalytics = Firebase.analytics
 
 
         val username = intent.getStringExtra(Constants.USER_NAME)
@@ -25,7 +35,7 @@ class ResultActivity : AppCompatActivity() {
         tv_score.text = "Your score is $correctAnswer out of $totalQuestions"
 
         //FIREBASE !!!
-        firebaseAnalytics.setUserProperty("correct_answer", "$correctAnswer") // Tout au long de la navigation
+        firebaseAnalytics.setUserProperty("correct_answer", "$correctAnswer")
         firebaseAnalytics.logEvent("screen") {
             param("screen_name", "Finish")
             param("screen_number", "$totalQuestions")
