@@ -1,4 +1,9 @@
 <resources>
-    <string name="app_name">TrackingConverteoApp</string>
+    <string name="app_name"> App Test Tracking </string>
+    <string name="welcome"> welcome ! </string>
+    <string name="enter_name"> Please enter your name </string>
+    <string name="name"> Name </string>
+    <string name="start"> Start </string>
     <string name="questionsTitle">What country this flag is belong to ?</string>
+
 </resources>

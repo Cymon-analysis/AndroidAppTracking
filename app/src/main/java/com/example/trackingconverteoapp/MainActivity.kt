@@ -34,13 +34,12 @@ class MainActivity : AppCompatActivity() {
             this.putString("app", "Converteo Tracking Test")
             this.putString("env", "dev")
         }
-
         firebaseAnalytics.setDefaultEventParameters(parameters)
 
         firebaseAnalytics.logEvent("screen") {
             param("screen_name", "homepage")
             param("screen_number", "1")
-        } //FIREBASE !!!
+        }
 
 
         btn_start.setOnClickListener {
