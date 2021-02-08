@@ -25,6 +25,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
+
+        //FIREBASE !!!
         firebaseAnalytics = Firebase.analytics
 
         val parameters = Bundle().apply {
@@ -37,18 +40,15 @@ class MainActivity : AppCompatActivity() {
         firebaseAnalytics.logEvent("screen") {
             param("screen_name", "homepage")
             param("screen_number", "1")
-        }
+        } //FIREBASE !!!
+
 
         btn_start.setOnClickListener {
 
-            firebaseAnalytics.logEvent("click_validated") {
-                param("screen_name", "homepage")
-                param("screen_number", "1")
-            }
 
             if(et_name.text.toString().isEmpty()) {
 
-
+                //FIREBASE !!!
                 firebaseAnalytics.logEvent("click_validated") {
                     param("screen_name", "homepage")
                     param("screen_number", "1")
@@ -60,13 +60,14 @@ class MainActivity : AppCompatActivity() {
                         .show() // Toast provides feedback to the user.
             }else{
 
+
+                //FIREBASE !!!
                 firebaseAnalytics.logEvent("click_validated") {
                     param("screen_name", "homepage")
                     param("screen_number", "1")
                     param("click_estate", "correct")
                 }
-
-                firebaseAnalytics.setUserProperty("user_name", Constants.USER_NAME)
+                firebaseAnalytics.setUserProperty("user_name", Constants.USER_NAME) // Tout au long de la navigation
 
 
                 val intent = Intent(this, QuestionsActivity::class.java)

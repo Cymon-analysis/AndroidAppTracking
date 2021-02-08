@@ -59,10 +59,6 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
         btn_submit.setOnClickListener(this)
 
         // FIREBASE
-        firebaseAnalytics.logEvent("screen") {
-            param("screen_name", "Questions")
-            param("screen_number", "$mCurrentPosition")
-        }
 
 
     }
@@ -100,10 +96,6 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
                             setQuestion()
 
                             // FIREBASE
-                            firebaseAnalytics.logEvent("screen") {
-                                param("screen_name", "Questions")
-                                param("screen_number", "$mCurrentPosition")
-                            }
 
 
                         }else -> {
@@ -121,11 +113,27 @@ class QuestionsActivity : AppCompatActivity(), View.OnClickListener {
                     if(question!!.correctAnswer != mSelectedOptionPosition) {
                         markButtonDisable()
                         answerView(mSelectedOptionPosition, drawable.wrong_option_border_bg)
+
+                        //FIREBASE !!!
+                        firebaseAnalytics.logEvent("screen") {
+                            param("screen_name", "Questions")
+                            param("screen_number", "$mCurrentPosition")
+                            param("answer_estate", "wrong")
+                        }
+
                     }else{
                         mCorrectAnswers++
                     }
                     markButtonDisable()
                     answerView(question.correctAnswer, drawable.correct_option_border_bg)
+
+                    //FIREBASE !!!
+                    firebaseAnalytics.logEvent("screen") {
+                        param("screen_name", "Questions")
+                        param("screen_number", "$mCurrentPosition")
+                        param("answer_estate", "correct")
+                    }
+
 
                     if(mCurrentPosition == mQuestionsList!!.size){
                         btn_submit.text = "FINISH"
